@@ -1,0 +1,6 @@
+[submodule "AGDevAzureFuncs/AGDev"]
+	path = AGDevAzureFuncs/AGDev
+	url = https://github.com/iwaag/AGDev.git
+[submodule "AGDevAzureFuncs/AGBLang"]
+	path = AGDevAzureFuncs/AGBLang
+	url = https://github.com/iwaag/AGBLang.git

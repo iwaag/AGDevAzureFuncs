@@ -1,0 +1,292 @@
+{
+	"Categories": [
+		"AllNouns",
+		"AllVerbs",
+		"AuxiliaryVerbs",
+		"NormalVerbs",
+		"AllAdjectives",
+		"AllAdverbs",
+		"GlobalPhrases",
+		"Title",
+		"ConditionPhrases",
+		"RootUnit"
+	],
+	"GeneralFormats": [
+		{
+			"Names": [ "Conjunction" ],
+			"Forms": [ "and" ]
+		},
+		{
+			"Names": [ "BE" ],
+			"Forms": [ "be", "is", "was", "are", "were", "am" ],
+			"IsPolymorphicWords": true
+		},
+		{
+			"Names": [ "GUI_POSITION_SPECIFIER" ],
+			"Forms": [ "upper-left", "upper-center", "upper-right", "middle-left", "middle-center", "middle-right", "lower-left", "lower-center", "lower-right" ]
+		},
+		{
+			"Names": [ "ConditionMarker" ],
+			"Forms": [ "when", "if" ],
+			"IsPolymorphicWords": true
+		},
+		{
+			"Names": [ "NominalBlock" ],
+			"Forms": [ "#AllNouns#" ],
+			"Attributes": [ "NominalBlock" ],
+			"IsEnumerable": true
+		},
+		{
+			"Names": [ "NominalUnit" ],
+			"Forms": [ "#AllNouns#" ],
+			"Attributes": [ "NominalBlock" ]
+		},
+		{
+			"Names": [ "VerbalBlock" ],
+			"Forms": [ "#AllVerbs#" ],
+			"Attributes": [ "VerbalBlock" ],
+			"IsEnumerable": true
+		},
+		{
+			"Names": [ "VerbalUnit" ],
+			"Forms": [ "#AllVerbs#" ],
+			"Attributes": [ "VerbalBlock" ]
+		},
+		{
+			"Names": [ "AdjectiveBlock" ],
+			"Forms": [ "#AllAdjectives#" ],
+			"IsEnumerable": true,
+			"IsConjunctionOptional": true
+		},
+		{
+			"Names": [ "AdverbBlock" ],
+			"Forms": [ "#AllAdverbs#" ],
+			"Categories": [ "ConditionPhrases" ],
+			"IsEnumerable": true,
+			"IsConjunctionOptional": true
+		},
+		{
+			"Names": [ "TitleSentence" ],
+			"Forms": [ "(IGNORE)#4# #NominalBlock# (IGNORE)#4#" ],
+			"Categories": [ "RootUnit" ],
+			"Attributes": [ "Title" ]
+		},
+		{
+			"Names": [ "SV" ],
+			"Forms": [ "#NominalBlock# #VerbalBlock#" ],
+			"Categories": [ "GlobalPhrases" ],
+			"Attributes": [ "SV" ]
+		},
+		{
+			"Names": [ "SVBlock" ],
+			"Forms": [ "#SV#" ],
+			"Categories": [ "GlobalPhrases" ],
+			"ClusterAttributes": [ "SentenceCluster" ],
+			"IsEnumerable": true
+		},
+		{
+			"Names": [ "QuoteBlock" ],
+			"Forms": [ "#1#" ],
+			"Attributes": [ "QuoteBlock" ],
+			"IsEnumerable": true
+		},
+		{
+			"Names": [ "QuoteAndSV" ],
+			"Forms": [ "#QuoteBlock# #NominalBlock# #VerbalBlock#" ],
+			"Attributes": [ "QuoteSV" ],
+			"Categories": [ "GlobalPhrases" ]
+		},
+		{
+			"Names": [ "ConditionSV" ],
+			"Forms": [ "(IGNORE)#ConditionMarker# #NominalBlock# #VerbalBlock#" ],
+			"Attributes": [ "ConditionSV" ],
+			"Categories": [ "ConditionPhrases" ]
+		},
+		{
+			"Names": [ "V" ],
+			"Forms": [ "#VerbalBlock#" ],
+			"Categories": [ "GlobalPhrases" ],
+			"Attributes": [ "AnnonymousCommand" ]
+		},
+		{
+			"Names": [ "ConditionByAdverb" ],
+			"Forms": [ "#AdverbBlock#" ],
+			"Categories": [ "ConditionPhrases" ]
+		},
+		{
+			"Names": [ "SetenceModifier" ],
+			"Forms": [ "#ConditionPhrases#" ],
+			"Attributes": [ "SentenceModifier" ]
+		},
+		{
+			"Names": [ "FromalSentence" ],
+			"Forms": [ "#GlobalPhrases#" ],
+			"PreModifiers": [ "#SetenceModifier# (IGNORE)#3#" ]
+		},
+		{
+			"Names": [ "FromalPeriodSentence" ],
+			"Forms": [ "#FromalSentence# (IGNORE)#2#" ],
+			"Categories": [ "RootUnit" ]
+		},
+		{
+			"Names": [ "UnreadableFromalPeriodSentence" ],
+			"Forms": [ "(UNREADABLE)#2# (IGNORE)#2#" ],
+			"Categories": [ "RootUnit" ],
+			"Attributes": [ "Unreadable" ]
+		},
+		{
+			"Names": [ "UnreadableTitleSentence" ],
+			"Forms": [ "(IGNORE)#4# (UNREADABLE)#4# (IGNORE)#4#" ],
+			"Categories": [ "RootUnit" ],
+			"Attributes": [ "Unreadable" ]
+		}
+	],
+	"Templates": [
+		{
+			"TemplateNames": [ "Noun", "Nouns" ],
+			"Categories": [ "AllNouns" ],
+			"PreModifiers": [ "#AdjectiveBlock#" ],
+			"PostModifiers": [ "(IGNORE)who #VerbalBlock#" ],
+			"IsPolymorphicWords": true
+		},
+		{
+			"TemplateNames": [ "UnusualNoun", "UnusualNouns" ],
+			"Categories": [ "AllNouns" ],
+			"PreModifiers": [ "#AdjectiveBlock#" ]
+		},
+		{
+			"TemplateNames": [ "Verb", "Verbs" ],
+			"Categories": [ "AllVerbs" ],
+			"PreModifiers": [ "#AdverbBlock#" ],
+			"PostModifiers": [ "#AdverbBlock#" ],
+			"IsPolymorphicWords": true
+		},
+		{
+			"TemplateNames": [ "UnusualVerb", "UnusualVerbs" ],
+			"Categories": [ "AllVerbs" ]
+		},
+		{
+      "TemplateNames": [ "Adjective", "Adjectives" ],
+      "Categories": [ "AllAdjectives" ]
+		},
+		{
+      "TemplateNames": [ "UnusualAdjective", "UnusualAdjectives" ],
+      "Categories": [ "AllAdjectives" ]
+		},
+		{ "TemplateNames": [ "Adverb", "Adverbs" ], "Categories": [ "AllAdverbs" ]  }
+	],
+	"UnusualAdjectives": [
+		{ "Forms": [ "#6#" ] },
+		{ "Forms": [ "one", "a", "an" ], "IsPolymorphicWords": true},
+    { "Forms": [ "another" ] },
+		{ "Forms": [ "two" ]},
+		{ "Forms": [ "three" ]},
+    { "Forms": [ "magnificent" ]},
+		{ "Forms": [ "some" ] },
+    { "Forms": [ "few" ] },
+		{ "Forms": [ "the" ] },
+		{ "Forms": [ "all", "all of the" ], "IsPolymorphicWords": true},
+		{ "Forms": [ "face up" ] }
+	],
+  "Nouns": [
+    { "Forms": [ "player", "players" ] },
+    { "Forms": [ "person", "people" ] },
+    { "Forms": [ "turn", "turns" ] },
+    { "Forms": [ "intro", "intros" ] },
+    { "Forms": [ "introduction", "introductions" ] },
+    { "Forms": [ "teaser", "teasers" ] },
+    { "Forms": [ "game", "games" ] },
+    { "Forms": [ "scene", "scenes" ] },
+    { "Forms": [ "music", "musics" ] },
+    { "Forms": [ "MainHub", "MainHubs" ] },
+    { "Forms": [ "card", "cards" ] },
+    { "Forms": [ "point", "points" ] },
+    { "Forms": [ "surface", "surfaces" ] },
+    { "Forms": [ "system", "systems" ] },
+    { "Forms": [ "logo", "logo" ] },
+    { "Forms": [ "second", "seconds" ] },
+    { "Forms": [ "minute", "minutes" ] },
+    { "Forms": [ "hour", "hours" ] },
+    { "Forms": [ "space", "spaces" ] },
+    { "Forms": [ "galaxy", "galaxies" ] },
+    {
+      "Forms": [ "title", "titles" ],
+      "PostModifiers": [ "#QuoteBlock#" ]
+    },
+    {
+      "Forms": [ "text", "texts" ],
+      "PostModifiers": [ "#QuoteBlock#" ]
+    },
+    {
+      "Forms": [ "button", "buttons" ],
+      "PostModifiers": [ "#QuoteBlock#" ]
+    }
+  ],
+	"UnusualNouns": [
+    { "Forms": [ "#1#" ] },
+		{ "Forms": [ "it", "they", "he", "she" ], "Attribute": [ "Pronoun" ] },
+    { "Forms": [ "how many" ], "PostModifiers": [ "#NominalBlock# #SV#" ]  }
+	],
+  "UnusualVerbs": [
+    {
+      "Names": [ "THERE_BE" ],
+      "Forms": [ "there #be#" ],
+      "PostModifiers": [ "#NominalBlock#" ]
+    },
+    {
+      "Names": [ "PASSIVE_BE" ],
+      "Forms": [ "#be#" ],
+      "PostModifiers": [ "#VerbalUnit#" ]
+    },
+    {
+      "Names": [ "VERBAL_BE" ],
+      "Forms": [ "#be#" ],
+      "PostModifiers": [ "#AdjectiveBlock#", "#NominalBlock#" ]
+    },
+    {
+      "Names": [ "EXISTANCE_VERBAL_BE" ],
+      "Forms": [ "#be#" ]
+    },
+    {
+      "Names": [ "DONOT" ],
+      "Forms": [ "do not" ],
+      "PostModifiers": [ "#AllVerbs#" ]
+    }
+  ],
+	"Verbs": [
+		{ "Forms": [ "remove", "removing", "removed", "removes" ], "PostModifiers": [ "#NominalBlock#" ] },
+		{ "Forms": [ "receive", "receiving", "received", "receives" ], "PostModifiers": [ "#NominalBlock#" ] },
+		{ "Forms": [ "appear", "appearing", "appeared", "appears" ] },
+    { "Forms": [ "begin", "beginning", "began", "begins" ] },
+    { "Forms": [ "end", "ending", "ended", "ends" ] },
+    { "Forms": [ "clear", "clearing", "cleared", "clears" ], "PostModifiers": [ "#NominalBlock#" ] },
+    { "Forms": [ "fade in", "fading in", "faded in", "faded in" ] },
+    { "Forms": [ "fade out", "fading out", "faded out", "faded out"  ] },
+    { "Forms": [ "quit", "quitting", "quit", "quits", "quit" ] },
+    { "Forms": [ "hit", "hitting", "hit", "hits", "hit" ], "PostModifiers": [ "#NominalBlock#" ] },
+		{ "Forms": [ "choose", "choosing", "chose", "chooses", "chosen" ] },
+		{ "Forms": [ "flip over", "flipping over", "flipped over", "flips over", "flipped over" ] },
+		{ "Forms": [ "turn", "turning", "turned", "turns", "turned" ] },
+		{ "Forms": [ "match", "matching", "matched", "matches", "matched" ]},
+		{ "Forms": [ "leave", "leaving", "left", "leaves", "left" ] },
+    { "Forms": [ "shuffle", "shuffling", "shuffled", "shuffles", "shuffled" ] },
+    { "Forms": [ "lay", "laying", "laid", "lays", "lain" ] },
+    { "Forms": [ "get", "getting", "got", "gets", "gotten" ], "PostModifiers": [ "#NominalBlock#" ] },
+    { "Forms": [ "show", "showing", "showed", "shows", "shown" ], "PostModifiers": [ "#NominalBlock#" ] },
+		{ "Forms": [ "have", "having", "had", "has", "had" ], "PostModifiers": [ "#NominalBlock#" ] },
+    { "Forms": [ "make the match", "making the match", "made the match", "makes the match", "made the match" ] }
+	],
+	"Adverbs": [
+		{ "Forms": [ "each" ], "PostModifiers": [ "#NominalUnit#" ] },
+    { "Forms": [ "on" ], "PostModifiers": [ "#NominalBlock#" ] },
+		{ "Forms": [ "at" ], "PostModifiers": [ "#GUI_POSITION_SPECIFIER#" ] },
+    { "Forms": [ "then" ] },
+    { "Forms": [ "here" ] },
+    { "Forms": [ "from" ], "PostModifiers": [ "#NominalBlock#" ] },
+		{ "Forms": [ "both" ] },
+    { "Forms": [ "back" ] },
+		{ "Forms": [ "face down" ] },
+		{ "Forms": [ "face up" ] },
+		{ "Forms": [ "later" ], "PreModifiers" :  [ "#NominalBlock#" ] }
+	]
+}
